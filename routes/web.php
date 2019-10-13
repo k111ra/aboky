@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/boutique', function () {
-    return view('boutique');
-});
+// Route::get('/boutique', function () {
+//     return view('boutique');
+// });
+
+Route::get('/boutique', 'ProductController@showProductsList');
 
 Route::get('/services', function () {
     return view('services');
@@ -29,4 +31,12 @@ Route::get('/apropos', function () {
 
 Route::get('/contact', function () {
     return view('contact');
+});
+
+Route::get('/panier/connexion', function () {
+    return view('panier.connexion');
+});
+
+Route::get('/panier/panier', function () {
+    return view('panier.panier');
 });

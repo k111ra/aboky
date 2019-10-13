@@ -15,7 +15,7 @@
                 <li class="nav-item "><a href="/apropos" class="nav-link">A Propos</a></li>
 
                 <li class="nav-item "><a href="/contact" class="nav-link">Contact</a></li>
-                <li class="nav-item cart "><a href="cart.html" class="nav-link"><span
+                <li class="nav-item cart "><a href="/panier/panier" class="nav-link"><span
                             class="icon icon-shopping_cart"></span><span
                             class="bag d-flex justify-content-center align-items-center"><small>2</small></span></a>
                 </li>

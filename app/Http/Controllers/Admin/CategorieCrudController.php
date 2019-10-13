@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ProduitRequest;
+use App\Http\Requests\CategorieRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ProduitCrudController
+ * Class CategorieCrudController
  * @package App\Http\Controllers\Admin
  * @property-read CrudPanel $crud
  */
-class ProduitCrudController extends CrudController
+class CategorieCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -21,48 +21,31 @@ class ProduitCrudController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel('App\Models\Produit');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/produit');
-        $this->crud->setEntityNameStrings('produit', 'produits');
+        $this->crud->setModel('App\Models\Categorie');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/categorie');
+        $this->crud->setEntityNameStrings('categorie', 'categories');
     }
 
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        // pour le nom du produit a la table
         $this->crud->addColumn([
             'name'=>'name',
             'type'=>'text',
-            'label'=>'Nom',
-            [   // Textarea
-                'name'  => 'textarea',
-                'label' => 'Textarea',
-                'type'  => 'textarea',
-                'tab'   => 'Simple',
-            ]
+            'label'=>'Nom'
             ]);
-
     }
 
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(ProduitRequest::class);
+        $this->crud->setValidation(CategorieRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        // Ajoute le champ de saisie dans le menu lateral de backpack
-                $this->crud->addField([
-                    'name'=>'name',
-                    'type'=>'text',
-                    'label'=>'Nom',
-
-                    ]);
-                $this->crud->addField([   // Textarea
-                    'name'  => 'description',
-                    'label' => 'description',
-                    'type'  => 'textarea',
-                ]);
-
-
+        $this->crud->addField([
+            'name'=>'name',
+            'type'=>'text',
+            'label'=>'Nom'
+            ]);
     }
 
     protected function setupUpdateOperation()

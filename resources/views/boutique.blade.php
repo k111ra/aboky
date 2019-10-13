@@ -53,58 +53,27 @@ Boutique
                             <div class="tab-pane fade show active" id="v-pills-0" role="tabpanel"
                                 aria-labelledby="v-pills-0-tab">
                                 <div class="row">
+                                        @if(!empty($produits) and $produits->count() > 0)
+                                        @foreach($produits as $produit)
                                     <div class="col-md-3">
                                         <div class="menu-entry">
                                             <a href="#" class="img"
                                                 style="background-image: url(images/menu-1.jpg);"></a>
                                             <div class="text text-center pt-4">
-                                                <h3><a href="product-single.html">Café Capuccino</a></h3>
-                                                <p>A small river named Duden flows by their place and supplies</p>
+                                                <h3><a href="product-single.html"><?php echo $produit->name?></a></h3>
+                                                <p><?php echo $produit->description?></p>
                                                 <p class="price"><span>2 000f CFA</span></p>
                                                 <p><a href="cart.html"
                                                         class="btn btn-primary btn-outline-primary">Panier</a></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="menu-entry">
-                                            <a href="#" class="img"
-                                                style="background-image: url(images/menu-2.jpg);"></a>
-                                            <div class="text text-center pt-4">
-                                                <h3><a href="product-single.html">Café Capuccino</a></h3>
-                                                <p>A small river named Duden flows by their place and supplies</p>
-                                                <p class="price"><span>2 000f CFA</span></p>
-                                                <p><a href="cart.html"
-                                                        class="btn btn-primary btn-outline-primary">Panier</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="menu-entry">
-                                            <a href="#" class="img"
-                                                style="background-image: url(images/menu-3.jpg);"></a>
-                                            <div class="text text-center pt-4">
-                                                <h3><a href="product-single.html">Coffee Capuccino</a></h3>
-                                                <p>A small river named Duden flows by their place and supplies</p>
-                                                <p class="price"><span>2 000f CFA</span></p>
-                                                <p><a href="cart.html"
-                                                        class="btn btn-primary btn-outline-primary">Panier</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="menu-entry">
-                                            <a href="#" class="img"
-                                                style="background-image: url(images/menu-4.jpg);"></a>
-                                            <div class="text text-center pt-4">
-                                                <h3><a href="product-single.html">Coffee Capuccino</a></h3>
-                                                <p>A small river named Duden flows by their place and supplies</p>
-                                                <p class="price"><span>2 000f CFA</span></p>
-                                                <p><a href="cart.html"
-                                                        class="btn btn-primary btn-outline-primary">Panier</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                        @else
+                                        <p>Il n'y a pas de pack disponible !!!</p>
+
+                                        @endif
+
                                 </div>
                             </div>
 
